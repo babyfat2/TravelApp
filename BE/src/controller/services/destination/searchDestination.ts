@@ -16,7 +16,7 @@ export const getSearchDestination = async (
       return res.status(200).json({ allDestinations });
     }
 
-    const destination = await prisma.destination.findMany({
+    const Destinations = await prisma.destination.findMany({
       where: {
         OR: [
           { name: { contains: q?.toString(), mode: "insensitive" } },
@@ -25,12 +25,19 @@ export const getSearchDestination = async (
         ],
       },
       take: 15,
+      select: {
+        id: true,
+        name: true,
+        description: true,
+        location: true,
+        images: true,
+    }
     });
 
-    if (destination) {
-      return res.status(200).json({ destination });
+    if (Destinations) {
+      return res.status(200).json({ Destinations });
     }
-    res.status(404).json({ destination: [], msg: "Not Found" });
+    res.status(404).json({ Destinations: [], msg: "Not Found" });
   } catch (e) {
     next(e);
   }

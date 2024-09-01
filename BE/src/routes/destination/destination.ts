@@ -9,6 +9,8 @@ import { postCommentDestination } from "../../controller/services/destination/po
 import { getDestinationLikeByUser } from "../../controller/services/destination/getDestinationFavoriteByUser";
 import { getAllCommentDestination } from "../../controller/services/destination/getAllCommentDestination";
 import { getSearchDestination } from "../../controller/services/destination/searchDestination";
+import { searchValidator } from "../../middleware/validation/inputValidation";
+import { handleErrors } from "../../middleware/validation/handleErrors";
 
 const router = express.Router();
 

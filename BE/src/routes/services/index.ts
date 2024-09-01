@@ -34,7 +34,6 @@ import { postPhotoUpload } from "../../modules/handlePhotoUpload/postPhotoUpload
 import { getSinglePost } from "../../controller/services/posts/getSinglePost";
 import { deletePostById } from "../../controller/services/posts/deletePostbyId";
 import { postDestination } from "../../controller/services/posts/postDestination";
-import { searchDestination } from "../../controller/services/destination/searchDestination";
 
 const router = Router();
 const isProduction = config.stage === "production";
@@ -47,13 +46,6 @@ router.get("/random-posts", getRandomPosts);
 router.get("/random-people", getRandomFollowers);
 router.get("/search-posts", searchValidator, handleErrors, searchForPosts);
 router.get("/search-people", searchValidator, handleErrors, searchPeople);
-
-router.get(
-  "/search-destinations",
-  searchValidator,
-  handleErrors,
-  searchDestination
-);
 
 router.post("/upload-photos", upload.array("photos"), postPhoto);
 
