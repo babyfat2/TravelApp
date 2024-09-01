@@ -1,0 +1,25 @@
+import { NextFunction, Request, Response } from "express";
+import prisma from "../../lib/prisma/init";
+export const updatePhoto = async (
+  req: any,
+  res: Response,
+  next: NextFunction
+) => {
+  console.log("🚀 ~ file: postPhoto.ts:4 ~ postPhoto ~ req:", req.file);
+  try {
+    const photos = await prisma.user.update({
+      where: {
+        id: req.user.id,
+      },
+      data: {
+        imageUri: req.imageUri,
+      },
+    });
+    if (photos) {
+      return res.status(200).json({ msg: "Successfully Uploaded" });
+    }
+    return res.status(400).json({ msg: "bad request" });
+  } catch (e) {
+    next(e);
+  }
+};
