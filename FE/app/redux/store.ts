@@ -7,6 +7,7 @@ import {
   import bottomSheet from "./slice/bottomSheet";
   import post from "./slice/post";
   import searchPost from "./slice/post/search";
+  import searchDestination from "./slice/destination/search";
   import toast from "./slice/toast";
   import { authApi } from "./api/auth";
   
@@ -47,6 +48,7 @@ const persistConfig = {
     toast,
     loadingModal,
     searchPost,
+    searchDestination,
     followers,
     chatlist: chatList,
     online,

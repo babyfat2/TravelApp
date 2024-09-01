@@ -14,14 +14,13 @@ import { FlashList } from "@shopify/flash-list";
 import { ActivityIndicator } from "react-native-paper";
 import useGetMode from "../../../hooks/GetMode";
 import { PostSearchSkeleton } from "../../../components/discover/Skeleton/PostSearchSkeleton";
-import PostsContainer from "../../../components/discover/PostsContainer";
-
 import { useAppSelector } from "../../../redux/hooks/hooks";
+import DestinationContainer from "@/app/components/discover/DestinationContainer";
 
-export default function Posts() {
-  const posts = useAppSelector((state) => state.searchPost);
-  const authId = useAppSelector((state) => state.user?.data?.id);
-  const [showLoading, setShowLoading] = useState(posts?.data?.length > 8);
+export default function Destinations() {
+  const Destinations = useAppSelector((state) => state.searchDestination);
+  console.log(Destinations.data);
+  const [showLoading, setShowLoading] = useState(Destinations?.data?.length > 8);
   const dark = useGetMode();
   const color = dark ? "white" : "black";
   const acolor = !dark ? "white" : "black";
@@ -53,10 +52,10 @@ export default function Posts() {
       <Animated.View
         entering={FadeInLeft.withCallback(callback)
           .springify()
-          .delay(posts?.data?.length > 8 ? 400 : 0)}
+          .delay(Destinations?.data?.length > 8 ? 400 : 0)}
         style={{ flex: 1 }}
       >
-        {posts.loading && (
+        {Destinations.loading && (
           <Animated.View style={[{ gap: 5, padding: 10 }, animatedStyle]}>
             {[0, 1, 2].map((idx) => (
               <PostSearchSkeleton key={idx} />
@@ -64,7 +63,7 @@ export default function Posts() {
           </Animated.View>
         )}
         <FlashList
-          data={posts.data}
+          data={Destinations.data}
           showsVerticalScrollIndicator={false}
           estimatedItemSize={100}
           contentContainerStyle={{
@@ -73,31 +72,13 @@ export default function Posts() {
             paddingHorizontal: 10,
           }}
           renderItem={({ item }) => (
-            <PostsContainer
-              id={item.id}
-              date={item.createdAt}
-              comments={item._count.comments}
-              isReposted={
-                item?.repostUser?.find(
-                  (repostUser) => repostUser?.id === authId
-                )
-                  ? true
-                  : false
-              }
-              link={item.link}
-              like={item._count.like}
-              thumbNail={item.videoThumbnail}
-              isLiked={
-                item?.like?.find((like) => like?.userId === authId)
-                  ? true
-                  : false
-              }
-              imageUri={item.user?.imageUri}
-              name={item.user?.name}
-              userTag={item.user?.userName}
-              verified={item.user?.verified}
-              photoUri={item.photoUri}
-              postText={item.postText}
+            <DestinationContainer 
+            name={item.name}
+            location={item.location}
+            id={item.id}
+            images={item.images}
+            description={item.description}
+            likes={item.likes}
             />
           )}
           keyExtractor={(item) => item.id.toString()}

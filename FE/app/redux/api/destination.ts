@@ -87,5 +87,6 @@ export const {
   useLikeDestinationMutation , 
   useLazyAllCommentDestinationQuery, 
   useCommentDestinationMutation, 
-  useLazyGetDestinationLikeByUserQuery
+  useLazyGetDestinationLikeByUserQuery,
+  useLazySearchDestinationQuery,
 } = destinationApi;

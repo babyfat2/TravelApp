@@ -171,13 +171,39 @@ export function BottomTabNavigator() {
       }}
     >
       <Tab.Screen
+        name="BottomHome"
+        options={({ navigation, route }: BottomProp) => {
+          return {
+            headerShown: false,
+
+            title: "Home",
+
+            headerTitleStyle: { fontFamily: "instaBold", fontSize: 24 },
+            headerTitleAlign: "center",
+          };
+        }}
+        component={DrawerNavigator}
+      />
+      <Tab.Screen
         name="Destination"
         component={Destination}
         options={({ navigation, route }: DestinationProp) => {
           return {
             title: "Destination",
             headerTitle: () => {
-              return <SearchBar />;
+              return (
+                <Text
+                  style={{
+                    fontSize: 20,
+                    paddingTop: 0,
+                    paddingBottom: 5,
+                    fontWeight: "bold",
+                    paddingLeft: 15,
+                  }}
+                >
+                  Destinations
+                </Text>
+              )
             },
             headerShown: true,
             headerTransparent: true,
@@ -214,20 +240,6 @@ export function BottomTabNavigator() {
             ),
           };
         }}
-      />
-      <Tab.Screen
-        name="BottomHome"
-        options={({ navigation, route }: BottomProp) => {
-          return {
-            headerShown: false,
-
-            title: "Home",
-
-            headerTitleStyle: { fontFamily: "instaBold", fontSize: 24 },
-            headerTitleAlign: "center",
-          };
-        }}
-        component={DrawerNavigator}
       />
       <Tab.Screen
         name="Discover"

@@ -9,11 +9,13 @@ import { BlurView } from "expo-blur";
 import useGetMode from "../../hooks/GetMode";
 import Posts from "./SearchScreens/Posts";
 import Users from "./SearchScreens/Users";
+import Destinations from "./SearchScreens/Destinations";
 
 const { width, height } = Dimensions.get("window");
 const renderScene = SceneMap({
   users: Users,
   posts: Posts,
+  destinations: Destinations,
 });
 const renderTabBar = (props: any) => {
   const dark = useGetMode();
@@ -34,10 +36,10 @@ const renderTabBar = (props: any) => {
       inactiveColor="grey"
       indicatorContainerStyle={{
         borderRadius: 999,
-        width: width / 4,
+        width: width / 6,
         justifyContent: "center",
         alignItems: "center",
-        marginHorizontal: width / 5.4,
+        marginHorizontal: width / 7.4,
       }}
     />
   );
@@ -47,6 +49,7 @@ export default function Discover() {
   const dark = useGetMode();
   const tint = dark ? "dark" : "light";
   const persons = useAppSelector((state) => state.searchPeople);
+  const destinations = useAppSelector((state) => state.searchDestination);
   const { width } = Dimensions.get("window");
   const borderColor = dark ? "#FFFFFF7D" : "#4545452D";
   const [people, setPeople] = useState(true);
@@ -56,6 +59,7 @@ export default function Discover() {
   const [routes] = useState([
     { key: "users", title: "Users" },
     { key: "posts", title: "Posts" },
+    { key: "destinations", title: "Destinations" },
   ]);
   return (
     <AnimatedScreen style={{ minHeight: height }}>

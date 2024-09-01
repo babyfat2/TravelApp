@@ -1,16 +1,9 @@
 import {
-  View,
-  Text,
   TextInput,
-  StyleProp,
-  ViewStyle,
   Dimensions,
 } from "react-native";
 import useGetMode from "../../hooks/GetMode";
 import Animated, { FadeInRight } from "react-native-reanimated";
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { useDebounce } from "../../hooks/Debounce";
-import { BlurView } from "expo-blur";
 
 const { width } = Dimensions.get("window");
 export default function SearchBox({

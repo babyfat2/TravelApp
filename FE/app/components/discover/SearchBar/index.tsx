@@ -15,6 +15,7 @@ import {
   useLazySearchPostsQuery,
 } from "../../../redux/api/services";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useLazySearchDestinationQuery } from "@/app/redux/api/destination";
 
 const { width } = Dimensions.get("window");
 export default function SearchBar() {
@@ -28,11 +29,13 @@ export default function SearchBar() {
   const insets = useSafeAreaInsets();
   const [getSearchPosts, res] = useLazySearchPostsQuery();
   const [getSearchPeople] = useLazySearchPeopleQuery();
+  const [getSearchDestination] =  useLazySearchDestinationQuery();
 
   useEffect(() => {
     if (query) {
       getSearchPosts({ q: query });
       getSearchPeople({ q: query });
+      getSearchDestination({q: query});
     }
   }, [query]);
 

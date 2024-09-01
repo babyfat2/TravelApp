@@ -23,17 +23,6 @@ const Destination = ({ navigation }: DestinationNavigationProp) => {
 
   return (
     <AnimatedScreen style={{ paddingTop: 90, paddingBottom: 57 }}>
-      <Text
-        style={{
-          fontSize: 20,
-          paddingTop: 0,
-          paddingBottom: 5,
-          fontWeight: "bold",
-          paddingLeft: 15,
-        }}
-      >
-        Destinations
-      </Text>
       <FlatList
         data={filteredDestinations}
         renderItem={(item) => 

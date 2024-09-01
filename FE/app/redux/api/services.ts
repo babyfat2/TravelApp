@@ -95,13 +95,6 @@ export const servicesApi = createApi({
       query: ({ q }) => `/search-people?q=${q}`,
       extraOptions: { maxRetries: 0 },
     }),
-    searchDestinations: builder.query<
-      { destinations: IDestination[] },
-      { q: string }
-    >({
-      query: ({ q }) => `/search-destinations?q=${q}`,
-      extraOptions: { maxRetries: 0 },
-    }),
     followUser: builder.query<{ msg: string }, { id: string }>({
       query: ({ id }) => `/follow?id=${id}`,
       extraOptions: { maxRetries: 0 },
@@ -181,7 +174,6 @@ export const {
   useUploadPhotoMutation,
   usePostContentMutation,
   useLazySearchPeopleQuery,
-  useLazySearchDestinationsQuery,
   useLazyGetGuestPostsQuery,
   useGetRandomPostsQuery,
   useLazyGetRandomPostsQuery,
