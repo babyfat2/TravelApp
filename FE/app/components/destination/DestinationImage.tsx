@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ScrollView,Image, StyleSheet, Dimensions, Pressable } from "react-native";
+import { View, Text,Image, StyleSheet, Dimensions, Pressable } from "react-native";
 import { SwiperFlatList } from 'react-native-swiper-flatlist';
 import { Photo } from "@/app/types/api";
 import { ViewDestinationDetail, DestinationNavigationProp, HomeNavigationProp } from "@/app/types/navigation";
@@ -11,7 +11,7 @@ const DestinationImage = ({ images }: { images: Photo[]}) => {
   const navigation = useNavigation<HomeNavigationProp>();
   return (
     <View style={styles.container}>
-      <SwiperFlatList
+        <SwiperFlatList
       autoplay
       autoplayDelay={3}
       autoplayLoop

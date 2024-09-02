@@ -34,6 +34,7 @@ import {
 import { chatApi } from "./api/chat";
 import { reduxStorage } from "./storage";
 import { destinationApi } from "./api/destination";
+import destination from "./slice/destination";
 
 const persistConfig = {
   key: "root",
@@ -45,6 +46,7 @@ const persistConfig = {
     prefs,
     bottomSheet,
     post,
+    destination,
     toast,
     loadingModal,
     searchPost,

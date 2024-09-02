@@ -19,7 +19,6 @@ import DestinationContainer from "@/app/components/discover/DestinationContainer
 
 export default function Destinations() {
   const Destinations = useAppSelector((state) => state.searchDestination);
-  console.log(Destinations.data);
   const [showLoading, setShowLoading] = useState(Destinations?.data?.length > 8);
   const dark = useGetMode();
   const color = dark ? "white" : "black";

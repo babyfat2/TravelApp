@@ -36,7 +36,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import SearchBar from "../../components/discover/SearchBar";
 import { Platform, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import Destination from "../../screen/App/Destination/Destination";
+import Destination from "@/app/screen/App/Destination";
 const Tab = createBottomTabNavigator<BottomRootStackParamList>();
 export function BottomTabNavigator() {
   const dark = useGetMode();

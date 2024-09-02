@@ -41,7 +41,7 @@ import { useLazyGetAllChatsQuery } from "../redux/api/chat";
 import FollowingFollowers from "../screen/App/FollowingFollowers";
 import EditProfile from "../screen/App/EditProfile";
 import ChangeData from "../screen/App/ProfileScreens/ChangeData";
-import Destination from "../screen/App/Destination/Destination";
+import Destination from "../screen/App/Destination";
 import DestinationDetail from "../screen/App/Destination/DestinationDetail";
 import DestinationFavorite from "../screen/App/Destination/DestinationFavorite";
 const BACKGROUND_FETCH_TASK = "background-fetch";
