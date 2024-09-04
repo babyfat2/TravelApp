@@ -9,6 +9,7 @@
  ```bash
  Mở terminal nhập ipconfig copy ipv4 address và nhập vào biến 
    EXPO_PUBLIC_API_URL= http://xxx.xxx.x.xxx
+```
 3. Khởi chạy ứng dụng
 
    ```bash
