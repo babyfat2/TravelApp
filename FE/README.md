@@ -1,6 +1,6 @@
 ## Get started
 
-1. Cài đắt các gói phụ thuộc
+1. Cài đặt các gói phụ thuộc
 
    ```bash
    npm install
