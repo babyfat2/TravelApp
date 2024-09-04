@@ -1,50 +1,59 @@
-# Welcome to your Expo app 👋
-
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
-
 ## Get started
 
-1. Install dependencies
+1. Cài đắt các gói phụ thuộc
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. Khởi chạy ứng dụng
 
    ```bash
-    npx expo start
+    npm run android
    ```
 
-In the output, you'll find options to open the app in a
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+## Tài khoản đăng nhập
+Để đăng nhập vào ứng dụng người dùng có thể sử dụng tài khoản được khởi tạo sẵn: 
 ```bash
-npm run reset-project
+email: user1
+password: @User1111
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Các màn hình
+ <div align="center">
+    <table>
+  <tr>
+    <th>
+      <img src="https://firebasestorage.googleapis.com/v0/b/travel-20421.appspot.com/o/uploads%2Fchupmanhinh%2Fhome.png?alt=media&token=75a0ea56-ff47-4d92-9954-361ddd0ae35c" width="1080px" height="2400px" alt="home" />
+        <p align="center">Home</p>
+    </th>
+    <th>
+      <img src="https://firebasestorage.googleapis.com/v0/b/travel-20421.appspot.com/o/uploads%2Fchupmanhinh%2Fdestination.png?alt=media&token=553dc0cb-c674-4e58-8ef9-6b1775a11f44" width="1080px" height="2400px" alt="destination.svg" />
+        <p align="center">Destination</p>
+    </th>
+  </tr>
+  <tr>
+    <th>
+      <img src="https://firebasestorage.googleapis.com/v0/b/travel-20421.appspot.com/o/uploads%2Fchupmanhinh%2Fsreach.png?alt=media&token=ea56f1a4-068d-43ce-889a-1bcef772824e"  width="1080px" height="2400px" alt="search.svg" />
+        <p align="center">Search</p>
+    </th>
+    <th>
+      <img src="https://firebasestorage.googleapis.com/v0/b/travel-20421.appspot.com/o/uploads%2Fchupmanhinh%2Fprofile.png?alt=media&token=13999d89-92a8-4f5a-94e1-161a742ef11e" width="1080px" height="2400px" alt="profile.svg" />
+        <p align="center">Profile</p>
+    </th>
+  </tr>
+ <tr>
+    <th>
+      <img src="https://firebasestorage.googleapis.com/v0/b/travel-20421.appspot.com/o/uploads%2Fchupmanhinh%2Fmessange.png?alt=media&token=72a2defc-ac14-472c-9efe-efdf605e675c"  width="1080px" height="2400px" alt="messange.svg" />
+        <p align="center">Messange</p>
+    </th>
+    <th>
+      <img src="https://firebasestorage.googleapis.com/v0/b/travel-20421.appspot.com/o/uploads%2Fchupmanhinh%2Fsreach.png?alt=media&token=ea56f1a4-068d-43ce-889a-1bcef772824e" width="1080px" height="2400px" alt="Notification.svg" />
+        <p align="center">Notifications</p>
+    </th>
+  </tr>
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+</table>
+  </div>
