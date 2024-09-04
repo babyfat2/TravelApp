@@ -5,8 +5,11 @@
    ```bash
    npm install
    ```
-
-2. Khởi chạy ứng dụng
+2. Truy cập file .env
+ ```bash
+ Mở terminal nhập ipconfig copy ipv4 address và nhập vào biến 
+   EXPO_PUBLIC_API_URL= http://xxx.xxx.x.xxx
+3. Khởi chạy ứng dụng
 
    ```bash
     npm run android
