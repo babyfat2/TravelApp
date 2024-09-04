@@ -34,7 +34,6 @@ export default function PostBuilder({
   like,
   userId,
   link,
-  isReposted,
   id,
   myPost,
   thumbNail,
@@ -51,20 +50,6 @@ export default function PostBuilder({
   const rColor = isDark ? "#00000014" : "#BBBBBB";
   const user = useAppSelector((state) => state.user.data);
   const ref = useRef<any>(null);
-
-  const handleShare = () => {
-    console.log("shared");
-    ref?.current?.capture()?.then((uri: string) => {
-      console.log("do something with ", uri);
-      Share.open({ urls: [uri] })
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          err && console.log(err);
-        });
-    });
-  };
 
   return (
     <ViewShot ref={ref} options={{ fileName: id, format: "jpg", quality: 0.9 }}>
@@ -93,7 +78,6 @@ export default function PostBuilder({
               like,
               userId,
               thumbNail,
-              isReposted,
               link,
             });
           }}
@@ -183,10 +167,8 @@ export default function PostBuilder({
               <Engagements
                 title={title}
                 comments={comments}
-                handleShare={handleShare}
                 like={like}
                 isLiked={isLiked}
-                isReposted={isReposted}
                 id={id}
               />
             </View>

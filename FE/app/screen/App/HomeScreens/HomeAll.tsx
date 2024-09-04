@@ -95,21 +95,6 @@ export default function HomeAll() {
     }
   };
 
-  // useEffect(() => {
-  //   if (skip !== 0 && !noMore && !posts.loading)
-  //     getLazyPost({ take: 10, skip })
-  //       .unwrap()
-  //       .then((r) => {
-  //         setSkip(r.posts?.length || 0);
-  //         setNoMore(r.posts?.length === 0);
-  //       })
-  //       .catch((e) => {
-  //         dispatch(
-  //           openToast({ text: "couldn't get recent posts", type: "Failed" })
-  //         );
-  //       });
-  // }, [skip, noMore]);
-
   useEffect(() => {
     getLazyPost({ take: 20, skip })
       .unwrap()
@@ -117,9 +102,6 @@ export default function HomeAll() {
         setSkip(e.posts?.length);
       })
       .catch((e) => {
-        // dispatch(
-        //   openToast({ text: "couldn't get recent posts", type: "Failed" })
-        // );
       });
   }, []);
 
@@ -135,9 +117,6 @@ export default function HomeAll() {
           }
         })
         .catch((e) => {
-          // dispatch(
-          //   openToast({ text: "couldn't get recent posts", type: "Failed" })
-          // );
         });
   };
   const handleRefetch = () => {
@@ -150,20 +129,12 @@ export default function HomeAll() {
       })
       .catch((e) => {
         setRefreshing(false);
-        // dispatch(
-        //   openToast({ text: "couldn't get recent posts", type: "Failed" })
-        // );
       });
   };
 
   const renderItem = ({ item }: { item: IPost }) => (
     <PostBuilder
       id={item.id}
-      isReposted={
-        item?.repostUser?.find((repostUser) => repostUser?.id === authId)
-          ? true
-          : false
-      }
       date={item.createdAt}
       link={item.link}
       comments={item._count?.comments}

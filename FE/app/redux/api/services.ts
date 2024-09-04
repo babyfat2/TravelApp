@@ -147,9 +147,6 @@ export const servicesApi = createApi({
 
       extraOptions: { maxRetries: 2 },
     }),
-    repost: builder.query<{ msg: string }, { id: string }>({
-      query: ({ id }) => `/re-post?id=${id}`,
-    }),
     deletePostById: builder.mutation<
       { msg: string },
       {
@@ -188,7 +185,6 @@ export const {
   usePostCommentMutation,
   useLazySearchPostsQuery,
   useGetCommentByPostQuery,
-  useLazyRepostQuery,
   useLazyGetCommentByPostQuery,
   useLazyGetAllPostsQuery,
   useDeletePostByIdMutation,

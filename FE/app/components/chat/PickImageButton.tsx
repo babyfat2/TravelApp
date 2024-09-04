@@ -1,9 +1,7 @@
 import { View, Text, Pressable } from "react-native";
 import React from "react";
 import { CameraIcon } from "../icons";
-/*
-import ImagePicker from "react-native-image-crop-picker";
-*/
+import * as ImagePicker from 'expo-image-picker';
 import useGetMode from "../../hooks/GetMode";
 export default function PickImageButton({
   handleSetPhotoPost,
@@ -15,6 +13,20 @@ export default function PickImageButton({
   const backgroundColorView = "#8B8887";
   const rippleColor = !dark ? "#ABABAB" : "#55555500";
 
+  const pickImage = async () => {
+    // No permissions request is necessary for launching the image library
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    console.log(result);
+    if (!result.canceled) {
+      handleSetPhotoPost(result.assets[0].mimeType , result.assets[0].uri, result.assets[0].width);
+    }
+  };
   return (
     <View
       style={{
@@ -28,28 +40,8 @@ export default function PickImageButton({
         alignItems: "center",
       }}
     >
-    </View>
-  );
-}
-/*
-<Pressable
-        onPress={() => {
-          ImagePicker.openPicker({
-            cropperStatusBarColor: "#000000",
-            cropperToolbarColor: "#000000",
-            showCropGuidelines: false,
-            cropperTintColor: "red",
-            cropperActiveWidgetColor: "red",
-            mediaType: "photo",
-            cropperToolbarWidgetColor: "#FFFFFF",
-            cropperCancelText: "#FFFFFF",
-            cropperChooseColor: "#FFFFFF",
-          })
-            .then((image) => {
-              handleSetPhotoPost(image?.mime, image?.path, image?.size);
-            })
-            .catch((e) => {});
-        }}
+      <Pressable
+        onPress={pickImage}
         android_ripple={{ color: rippleColor, foreground: true }}
         style={{
           width: 30,
@@ -60,4 +52,7 @@ export default function PickImageButton({
       >
         <CameraIcon color={"white"} size={25} />
       </Pressable>
-      */
+      
+    </View>
+  );
+}

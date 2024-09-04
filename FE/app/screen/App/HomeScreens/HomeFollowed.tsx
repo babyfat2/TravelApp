@@ -5,7 +5,7 @@ import {
 } from "react-native";
 import React, { useCallback, useEffect, useState } from "react";
 import Fab from "../../../components/home/post/components/Fab";
-import { AddIcon, ReloadIcon } from "../../../components/icons";
+import { AddIcon, } from "../../../components/icons";
 import PostBuilder from "../../../components/home/post/PostBuilder";
 import { FlashList } from "@shopify/flash-list";
 import AnimatedScreen from "../../../components/global/AnimatedScreen";
@@ -107,9 +107,6 @@ export default function HomeFollowed() {
         setSkip(e.posts?.length);
       })
       .catch((e) => {
-        // dispatch(
-        //   openToast({ text: "couldn't get recent posts", type: "Failed" })
-        // );
       });
   }, []);
 
@@ -150,11 +147,6 @@ export default function HomeFollowed() {
     <PostBuilder
       id={item.id}
       date={item.createdAt}
-      isReposted={
-        item?.repostUser?.find((repostUser) => repostUser?.id === authId)
-          ? true
-          : false
-      }
       link={item.link}
       photo={
         item.photo

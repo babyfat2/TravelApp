@@ -33,7 +33,6 @@ export default function FullScreenPost({
   photo,
   link,
   id,
-  isReposted,
 }: IPostBuilder) {
   const width = Dimensions.get("window").width;
   const navigation = useNavigation<HomeNavigationProp>();
@@ -48,17 +47,6 @@ export default function FullScreenPost({
 
   const ref = useRef<any>(null);
 
-  const handleShare = () => {
-    ref?.current?.capture()?.then((uri: string) => {
-      Share.open({ urls: [uri] })
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          err && console.log(err);
-        });
-    });
-  };
   return (
     <ViewShot
       ref={ref}
@@ -196,9 +184,7 @@ export default function FullScreenPost({
               />
             </View>
             <EngagementsFullScreen
-              handleShare={handleShare}
               title={title}
-              isReposted={isReposted}
               comments={comments}
               like={like}
               isLiked={isLiked}

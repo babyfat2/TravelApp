@@ -13,10 +13,8 @@ import {
 import useGetMode from "../../../../hooks/GetMode";
 import {
   useLazyLikePostQuery,
-  useLazyRepostQuery,
 } from "../../../../redux/api/services";
 import CommentButton from "./CommentButton";
-import RepostButton from "./RepostButton";
 
 export default function EngagementsFullScreen({
   title,
@@ -24,20 +22,15 @@ export default function EngagementsFullScreen({
   comments,
   isLiked,
   id,
-  isReposted,
-  handleShare,
 }: {
   title?: string;
   like: number;
   comments?: number;
   id: string;
   isLiked: boolean;
-  isReposted: boolean;
-  handleShare: () => void;
 }) {
   const dark = useGetMode();
   const isDark = dark;
-  const [reposted, setRepost] = useState(() => isReposted);
   const [likeAmount, setLikeAmount] = useState(() => like);
   const [clicked, setClicked] = useState(() => isLiked);
   const [clickedComment, setClickedComment] = useState(false);
@@ -83,9 +76,6 @@ export default function EngagementsFullScreen({
           setClicked={handleClickComment}
           clicked={clickedComment}
         />
-        <Pressable onPress={handleShare}>
-          <ShareUnfocused size={20} color={shareColor} />
-        </Pressable>
       </View>
     </View>
   );

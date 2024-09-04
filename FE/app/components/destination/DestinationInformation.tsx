@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { View, ScrollView, LogBox } from "react-native";
-import { useRoute } from "@react-navigation/native";
 
 import { useLazyGetSingleDestinationQuery } from "@/app/redux/api/destination";
 import Animated, { FadeIn } from "react-native-reanimated";
@@ -8,9 +7,6 @@ import { IDestination } from "@/app/types/api";
 import DestinationImage from "./DestinationImage";
 import DestinationDescription from "./DestinationDescription";
 import { useAppSelector } from "@/app/redux/hooks/hooks";
-import SkeletonGroupPost from "../home/misc/SkeletonGroupPost";
-import { Skeleton } from "../home/misc/Skeleton";
-import EmptyList from "../home/misc/EmptyList";
 import { SkeletonDestination } from "./SkeletonDestination";
 
 const DestinationInformation = ({destinationId}: {destinationId: string}) =>{

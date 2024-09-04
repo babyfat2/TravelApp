@@ -13,7 +13,6 @@ export type IPostBuilder = {
   userTag: string;
   comments?: number;
   isLiked: boolean;
-  isReposted: boolean;
   verified: boolean;
   photoUri: string[];
   postText: string;
